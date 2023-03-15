@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>Hello from VUE</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -11,15 +11,6 @@
     <p>
       The information below is being fetched from your Serverless Cloud API:
     </p>
-    <div v-if="loading">Loading users...</div>
-    <div v-else-if="users.length == 0"><strong>No users found</strong></div>
-    <div v-else id="users">
-      <div v-for="user in users" v-bind:key="user.id">
-        <strong>{{ user.value.name }}: </strong>
-        <span :class="user.value.status">{{ user.value.status }}</span>
-      </div>
-    </div>
-
     <h3>Edit this Vue.js app:</h3>
     <p>
       Open your terminal to the project directory and run <code>npm i</code> to
@@ -33,7 +24,6 @@
 
 <script>
 import { ref } from "vue";
-import axios from "axios";
 
 export default {
   name: "HelloWorld",
@@ -48,19 +38,7 @@ export default {
       loading,
       users,
     };
-  },
-  created() {
-    axios
-      .get("/api/users")
-      .then((response) => {
-        this.users = response.data.users;
-        this.loading = false;
-      })
-      .catch((error) => {
-        console.log(error);
-        this.loading = false;
-      });
-  },
+  }
 };
 </script>
 

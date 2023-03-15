@@ -2,8 +2,6 @@
   "name": "vue-js",
   "version": "1.0.0",
   "description": "Serverless Cloud Vue.js template",
-  "main": "index.js",
-  "type": "module",
   "private": true,
   "scripts": {
     "start": "cloud",
@@ -15,34 +13,34 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
-    "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "@fullcalendar/core": "^5.7.2",
+    "@fullcalendar/daygrid": "^5.7.2",
+    "@fullcalendar/interaction": "^5.7.2",
+    "@fullcalendar/timegrid": "^5.7.2",
+    "@fullcalendar/vue3": "^5.7.2",
+    "chart.js": "3.3.2",
+    "core-js": "^3.27.1",
+    "primeflex": "^3.3.0",
+    "primeicons": "^6.0.1",
+    "primevue": "^3.22.4",
+    "prismjs": "^1.9.0",
+    "sass": "^1.37.5",
+    "sass-loader": "^10.0.0",
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
-    "@jest/globals": "^27.5.1",
-    "@serverless/cloud": "^2.10.13",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/cli-plugin-router": "^5.0.8",
+    "@vue/cli-plugin-unit-jest": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "@vue/compiler-sfc": "^3.2.45",
+    "@vue/test-utils": "^2.2.7",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true,
-      "jest": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser"
-    },
-    "rules": {}
+    "eslint-plugin-vue": "^7.0.0-0"
   },
   "browserslist": [
     "> 1%",
