@@ -24,6 +24,27 @@
 
 <script>
 import { ref } from "vue";
+import * as Realm from "realm-web";
+
+const app = Realm.App.getApp('pupas-backdev-gugas'); // replace this with your App ID
+
+
+async function loginApiKey(apiKey) {
+  // Create an API Key credential
+  const credentials = Realm.Credentials.apiKey(apiKey);
+  // Authenticate the user
+  const user = await app.logIn(credentials);
+  // `App.currentUser` updates to match the logged in user
+  console.assert(user.id === app.currentUser.id);
+  return user;
+}
+await loginApiKey('');
+
+const mongo = app.currentUser.mongoClient('mongodb-atlas');
+const locals = await mongo.db('bwbdev').collection('locals').find();
+
+console.log('Show locals collection');
+console.log(locals[0].emails);
 
 export default {
   name: "HelloWorld",
