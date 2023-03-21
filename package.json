@@ -34,6 +34,9 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@jest/globals": "^27.5.1",
     "@serverless/cloud": "^2.10.13",
     "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-eslint": "^5.0.8",
@@ -42,10 +45,8 @@
     "@vue/cli-service": "^5.0.8",
     "@vue/compiler-sfc": "^3.2.45",
     "@vue/test-utils": "^2.2.7",
-    "@babel/core": "^7.12.16",
-    "@jest/globals": "^27.5.1",
     "babel-eslint": "^10.1.0",
-    "@babel/eslint-parser": "^7.12.16",
+    "dotenv-webpack": "^8.0.1",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^7.0.0-0"
   },

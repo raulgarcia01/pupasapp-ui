@@ -21,6 +21,8 @@
     </p>
   </div>
   <p>Getting information from Atlas Mongo DB with GraphQL</p>
+  <div v-if="loading">Loading...</div>
+  <div v-else-if="error">Error: {{ error.message }}</div>
   <ul v-if="result && result.locals">
     <li v-for="local of result.locals" :key="local.id">
       {{ local.localName }} {{ local.picture }}
@@ -39,7 +41,7 @@ export default {
     msg: String,
   },
   setup() {
-    const { result } = useQuery(gql`
+    const { result, loading, error } = useQuery(gql`
       query getLocals {
         locals {
           _id
@@ -56,7 +58,9 @@ export default {
       }
     `)
     return {
-      result
+      result,
+      loading,
+      error
     };
   }
 };

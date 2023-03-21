@@ -106,11 +106,6 @@ import Wizard from './pages/Wizard';
 import * as Realm from "realm-web"
 import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core'
 import { DefaultApolloClient } from '@vue/apollo-composable'
-import { api, params } from "@serverless/cloud";
-
-api.get("/", () => {
-	console.log(params.ATLAS_API_KEY);
-});
 
 const id = "pupas-backdev-gugas";
 const config = {
@@ -130,7 +125,7 @@ const httpLink = createHttpLink({
 
 async function getValidAccessToken() {
   if (!appRealm.currentUser) {
-    await appRealm.logIn(Realm.Credentials.apiKey('X'));
+    await appRealm.logIn(Realm.Credentials.apiKey(process.env.ATLAS_API_KEY));
   } else {
     await appRealm.currentUser.refreshCustomData();
   }
