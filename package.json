@@ -34,7 +34,7 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@serverless/cloud": "^2.11.8",
+    "@serverless/cloud": "^2.10.13",
     "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/cli-plugin-router": "^5.0.8",
@@ -42,10 +42,27 @@
     "@vue/cli-service": "^5.0.8",
     "@vue/compiler-sfc": "^3.2.45",
     "@vue/test-utils": "^2.2.7",
-    "babel-core": "7.0.0-bridge.0",
+    "@babel/core": "^7.12.16",
+    "@jest/globals": "^27.5.1",
     "babel-eslint": "^10.1.0",
+    "@babel/eslint-parser": "^7.12.16",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^7.0.0-0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true,
+      "jest": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
   },
   "browserslist": [
     "> 1%",

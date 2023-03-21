@@ -106,11 +106,17 @@ import Wizard from './pages/Wizard';
 import * as Realm from "realm-web"
 import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core'
 import { DefaultApolloClient } from '@vue/apollo-composable'
+import { api, params } from "@serverless/cloud";
+
+api.get("/", () => {
+	console.log(params.ATLAS_API_KEY);
+});
 
 const id = "pupas-backdev-gugas";
 const config = {
   id,
 };
+
 const appRealm = new Realm.App(config);
 
 const httpLink = createHttpLink({
