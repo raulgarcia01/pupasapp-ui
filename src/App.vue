@@ -28,10 +28,6 @@
 
 			<AppFooter/>
 		</div>
-
-		<AppConfig :layoutMode="layoutMode" @layout-change="onLayoutChange" :darkMenu="darkMenu" @menu-color-change="onMenuColorChange"
-					:profileMode="profileMode" @profile-mode-change="onProfileModeChange" :configActive="configActive" @config-click="onConfigClick" @config-button-click="onConfigButtonClick"></AppConfig>
-
 		<div v-if="staticMenuMobileActive" class="layout-mask"></div>
 	</div>
 </template>
@@ -40,7 +36,6 @@
 import AppTopBar from './AppTopbar.vue';
 import AppInlineProfile from './AppInlineProfile.vue';
 import AppMenu from './AppMenu.vue';
-import AppConfig from './AppConfig.vue';
 import AppBreadcrumb from './AppBreadcrumb.vue';
 import AppFooter from './AppFooter.vue';
 import EventBus from './event-bus';
@@ -68,111 +63,17 @@ export default {
 					]
 				},
 				{
-					label: 'UI Kit', icon: 'pi pi-fw pi-sitemap',
+					label: 'Clients', icon: 'pi pi-fw pi-sitemap',
 					items: [
 						{label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout'},
-						{label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input'},
-						{label: 'Float Label', icon: 'pi pi-fw pi-bookmark', to: '/floatlabel'},
-						{label: 'Invalid State', icon: 'pi pi-fw pi-exclamation-circle', to: '/invalidstate'},
-						{label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button', class: 'rotated-icon'},
-						{label: 'Table', icon: 'pi pi-fw pi-table', to: '/table'},
-						{label: 'List', icon: 'pi pi-fw pi-list', to: '/list'},
-						{label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree'},
-						{label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/panel'},
-						{label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/overlay'},
-						{label: 'Media', icon: 'pi pi-fw pi-image', to: '/media'},
-						{label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/menu'},
-						{label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages'},
-						{label: 'File', icon: 'pi pi-fw pi-file', to: '/file'},
-						{label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/chart'},
-						{label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc'},
+						{label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input'}
 					]
 				},
 				{
-					label: 'Utilities', icon:'pi pi-fw pi-globe',
+					label: 'Providers', icon: 'pi pi-fw pi-sitemap',
 					items: [
-						{label: 'PrimeIcons', icon:'pi pi-fw pi-prime', to:'/icons'},
-						{label: 'PrimeFlex', icon: 'pi pi-fw pi-directions', url: 'https://www.primefaces.org/primeflex/', target: '_blank'}
-					]
-				},
-				{
-					label: 'Prime Blocks', icon: 'pi pi-prime',
-					items: [
-						{label: 'Free Blocks', icon: 'pi pi-fw pi-eye', to: '/blocks'},
-						{label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: 'https://www.primefaces.org/primeblocks-vue', target: '_blank'}
-					]
-				},
-				{
-					label: 'Pages', icon: 'pi pi-fw pi-clone',
-					items: [
-						{label: 'Crud', icon: 'pi pi-fw pi-pencil', to: '/crud'},
-						{label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar'},
-						{label: 'Timeline', icon: 'pi pi-fw pi-calendar', to: '/timeline'},
-						{label: 'Landing', icon: 'pi pi-fw pi-user-plus', url: 'pages/landing.html', target: '_blank'},
-						{label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login'},
-						{label: 'Invoice', icon: 'pi pi-fw pi-dollar', to: '/invoice'},
-						{label: 'Help', icon: 'pi pi-fw pi-question-circle', to: '/help'},
-						{label: 'Wizard', icon: 'pi pi-fw pi-star-fill', to: '/wizard'},
-						{label: 'Error', icon: 'pi pi-fw pi-times-circle', to: '/error'},
-						{label: 'Not Found', icon: 'pi pi-fw pi-exclamation-circle', to: '/notfound'},
-						{label: 'Access Denied', icon: 'pi pi-fw pi-lock', to: '/access'},
-						{label: 'Empty', icon: 'pi pi-fw pi-circle-off', to: '/empty'}
-					]
-				},
-				{
-					label: 'Hierarchy', icon: 'pi pi-fw pi-align-left',
-					items: [
-						{
-							label: 'Submenu 1', icon: 'pi pi-fw pi-align-left',
-							items: [
-								{
-									label: 'Submenu 1.1', icon: 'pi pi-fw pi-align-left',
-									items: [
-										{ label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-align-left' },
-										{ label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-align-left' },
-										{ label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-align-left' },
-									]
-								},
-								{
-									label: 'Submenu 1.2', icon: 'pi pi-fw pi-align-left',
-									items: [
-										{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-align-left' },
-										{ label: 'Submenu 1.2.2', icon: 'pi pi-fw pi-align-left' }
-									]
-								},
-							]
-						},
-						{
-							label: 'Submenu 2', icon: 'pi pi-fw pi-align-left',
-							items: [
-								{
-									label: 'Submenu 2.1', icon: 'pi pi-fw pi-align-left',
-									items: [
-										{ label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-align-left' },
-										{ label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-align-left' },
-										{ label: 'Submenu 2.1.3', icon: 'pi pi-fw pi-align-left' },
-									]
-								},
-								{
-									label: 'Submenu 2.2', icon: 'pi pi-fw pi-align-left',
-									items: [
-										{ label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-align-left' },
-										{ label: 'Submenu 2.2.2', icon: 'pi pi-fw pi-align-left' }
-									]
-								},
-							]
-						}
-					]
-				},
-				{
-					label: 'Get Started', icon: 'pi pi-fw pi-download',
-					items: [
-						{
-							label: 'Documentation', icon: 'pi pi-fw pi-file',to: '/documentation'
-						},
-						{
-							label: 'Buy Now', icon: 'pi pi-fw pi-money-bill', url: ['https://www.primefaces.org/store']
-						}
+						{label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout'},
+						{label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input'}
 					]
 				}
 			]
@@ -181,7 +82,6 @@ export default {
 	watch: {
 		$route() {
 			this.menuActive = false;
-			this.$toast.removeAllGroups();
 		}
 	},
 	methods: {
@@ -369,7 +269,6 @@ export default {
 	},
 	components: {
 		'AppTopBar': AppTopBar,
-		'AppConfig': AppConfig,
 		'AppInlineProfile': AppInlineProfile,
 		'AppMenu': AppMenu,
 		'AppBreadcrumb': AppBreadcrumb,
