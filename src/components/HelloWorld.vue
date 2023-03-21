@@ -20,31 +20,18 @@
       localhost address.
     </p>
   </div>
+  <p>Getting information from Atlas Mongo DB with GraphQL</p>
+  <ul v-if="result && result.locals">
+    <li v-for="local of result.locals" :key="local.id">
+      {{ local.localName }} {{ local.picture }}
+    </li>
+  </ul>
 </template>
 
 <script>
-import { ref } from "vue";
-import * as Realm from "realm-web";
+import { useQuery } from '@vue/apollo-composable'
+import gql from 'graphql-tag'
 
-const app = Realm.App.getApp('pupas-backdev-gugas'); // replace this with your App ID
-
-
-async function loginApiKey(apiKey) {
-  // Create an API Key credential
-  const credentials = Realm.Credentials.apiKey(apiKey);
-  // Authenticate the user
-  const user = await app.logIn(credentials);
-  // `App.currentUser` updates to match the logged in user
-  console.assert(user.id === app.currentUser.id);
-  return user;
-}
-await loginApiKey('');
-
-const mongo = app.currentUser.mongoClient('mongodb-atlas');
-const locals = await mongo.db('bwbdev').collection('locals').find();
-
-console.log('Show locals collection');
-console.log(locals[0].emails);
 
 export default {
   name: "HelloWorld",
@@ -52,12 +39,24 @@ export default {
     msg: String,
   },
   setup() {
-    const loading = ref(true);
-    const users = ref([]);
-
+    const { result } = useQuery(gql`
+      query getLocals {
+        locals {
+          _id
+          localName
+          phones {
+            areaCode
+            number
+          }
+          emails {
+            address
+          }
+          picture
+        }
+      }
+    `)
     return {
-      loading,
-      users,
+      result
     };
   }
 };
