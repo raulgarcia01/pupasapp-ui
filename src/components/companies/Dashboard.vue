@@ -190,10 +190,10 @@
 								<span class="team-member">Arlene Welch</span>
 								<span class="team-member-role">Design</span>
 							</div>
-							<a href="/">
+							<a href='/static'>
 								<i class="pi pi-comment"></i>
 							</a>
-							<a href="/">
+							<a href='/static'>
 								<i class="pi pi-share-alt"></i>
 							</a>
 						</li>
@@ -203,10 +203,10 @@
 								<span class="team-member">John Swisher</span>
 								<span class="team-member-role">Development</span>
 							</div>
-							<a href="/">
+							<a href='/static'>
 								<i class="pi pi-comment"></i>
 							</a>
-							<a href="/">
+							<a href='/static'>
 								<i class="pi pi-share-alt"></i>
 							</a>
 						</li>
@@ -216,10 +216,10 @@
 								<span class="team-member">Warren Shaw</span>
 								<span class="team-member-role">Sales</span>
 							</div>
-							<a href="/">
+							<a href='/static'>
 								<i class="pi pi-comment"></i>
 							</a>
-							<a href="/">
+							<a href='/static'>
 								<i class="pi pi-share-alt"></i>
 							</a>
 						</li>
@@ -229,10 +229,10 @@
 								<span class="team-member">Kevin Lane</span>
 								<span class="team-member-role">Marketing</span>
 							</div>
-							<a href="/">
+							<a href='/static'>
 								<i class="pi pi-comment"></i>
 							</a>
-							<a href="/">
+							<a href='/static'>
 								<i class="pi pi-share-alt"></i>
 							</a>
 						</li>
@@ -419,8 +419,8 @@
 </template>
 
 <script>
-import ProductService from '../service/ProductService';
-import EventService from '../service/EventService';
+import ProductService from '../../service/ProductService';
+import EventService from '../../service/EventService';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';

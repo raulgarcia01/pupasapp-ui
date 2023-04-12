@@ -1,3 +1,0 @@
-<template>
-	Dammm
-</template>

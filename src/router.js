@@ -5,7 +5,7 @@ const routes = [
         path: '/',
         name: 'dashboard',
         exact: true,
-        component: () => import('./components/HelloWorld.vue'),
+        component: () => import('./components/companies/QRClientReferal.vue'),
         meta: {
             breadcrumb: [{ label: 'Dashboard' }],
         }
@@ -13,7 +13,7 @@ const routes = [
     {
         path: '/formlayout',
         name: 'formlayout',
-        component: () => import('./components/FormLayoutDemo.vue'),
+        component: () => import('./components/companies/CompanyProfile.vue'),
         meta: {
             breadcrumb: [{ parent: 'UI Kit', label: 'Form Layout' }],
         },
@@ -21,7 +21,7 @@ const routes = [
     {
         path: '/input',
         name: 'input',
-        component: () => import('./components/InputDemo.vue'),
+        component: () => import('./components/companies/CompanyWizard.vue'),
         meta: {
             breadcrumb: [{ parent: 'UI Kit', label: 'Input' }],
         },
