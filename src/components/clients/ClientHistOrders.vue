@@ -1,6 +1,6 @@
 <template>
-    Historical orders page on construction
-    <!-- TODO create Historical orders-->
+    Hist Orders page on construction
+    <!-- TODO create Hist Orders-->
 </template>
 <script setup>
 </script>

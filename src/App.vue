@@ -57,23 +57,34 @@ export default {
 			configClick: false,
 			menu: [
 				{
-					label: 'Home Page', icon: 'pi pi-fw pi-home',
+					label: 'Company', icon: 'pi pi-fw pi-home',
 					items: [
-						{label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/'}
+						{label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/'},
+						{label: 'Profile', icon: 'pi pi-fw pi-home', to: '/companyProfile'},
+						{label: 'QR Generator', icon: 'pi pi-fw pi-home', to: '/qrGenerator'},
+						{label: 'Social Campaign', icon: 'pi pi-fw pi-home', to: '/companyCampaign'},
+						{label: 'Wizard', icon: 'pi pi-fw pi-home', to: '/companyWizard'}
 					]
 				},
 				{
 					label: 'Clients', icon: 'pi pi-fw pi-sitemap',
 					items: [
-						{label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout'},
-						{label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input'}
+						{label: 'Catalog', icon: 'pi pi-fw pi-id-card', to: '/clientCatalog'},
+						{label: 'Hist Orders', icon: 'pi pi-fw pi-id-card', to: '/clientHistOrders'},
+						{label: 'Profile', icon: 'pi pi-fw pi-id-card', to: '/clientProfile'},
+						{label: 'Wizard', icon: 'pi pi-fw pi-home', to: '/clientWizard'}
+					]
+				},
+				{
+					label: 'Products', icon: 'pi pi-fw pi-sitemap',
+					items: [
+						{label: 'Catalog', icon: 'pi pi-fw pi-id-card', to: '/productCatalog'}
 					]
 				},
 				{
 					label: 'Providers', icon: 'pi pi-fw pi-sitemap',
 					items: [
-						{label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout'},
-						{label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input'}
+						{label: 'Catalog', icon: 'pi pi-fw pi-id-card', to: '/providerCatalog'}
 					]
 				}
 			]

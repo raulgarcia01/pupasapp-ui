@@ -1,3 +1,6 @@
 <template>
-	Boom
+	Company Wizard page on construction
+	<!-- TODO create Company Wizard-->
 </template>
+<script setup>
+</script>

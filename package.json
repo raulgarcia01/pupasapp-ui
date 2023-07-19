@@ -7,11 +7,12 @@
     "start": "cloud",
     "build": "cloud build",
     "lint": "vue-cli-service lint",
-    "cloud:dev": "vue-cli-service serve",
-    "cloud:build": "vue-cli-service build",
-    "cloud:lint": "vue-cli-service lint"
+    "ampt:dev": "vue-cli-service serve",
+    "ampt:build": "vue-cli-service build",
+    "ampt:lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@ampt/cloud": "^0.0.1-beta.2",
     "@apollo/client": "^3.7.10",
     "@fullcalendar/core": "^5.7.2",
     "@fullcalendar/daygrid": "^5.7.2",
@@ -23,6 +24,7 @@
     "axios": "^0.26.1",
     "chart.js": "3.3.2",
     "core-js": "^3.27.1",
+    "graphql": "^16.7.1",
     "primeflex": "^3.3.0",
     "primeicons": "^6.0.1",
     "primevue": "^3.22.4",
@@ -37,7 +39,6 @@
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
     "@jest/globals": "^27.5.1",
-    "@serverless/cloud": "^2.10.13",
     "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/cli-plugin-router": "^5.0.8",
@@ -74,5 +75,9 @@
   "serverless": {
     "app": "pupasapp-ui",
     "org": "raulgarcia01"
+  },
+  "ampt": {
+    "org": "raulgarcia01364848",
+    "app": "pupasapp-ui"
   }
 }
